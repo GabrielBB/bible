@@ -18,10 +18,14 @@ class ChapterListPage extends StatelessWidget {
         itemCount: book["chapters"].length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            height: 50,
-            color: Colors.grey[200],
-            child: Center(child: Text('${book["name"]} $index')),
-          );
+              height: 50,
+              color: Colors.grey[200],
+              child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue[100],
+                    child: Text('$index'),
+                  ),
+                  title: Text('${book["name"]} $index')));
         },
         separatorBuilder: (BuildContext context, int index) =>
             const Divider(height: 2),

@@ -30,7 +30,12 @@ class BookListPage extends StatelessWidget {
             child: Container(
               height: 50,
               color: Colors.grey[200],
-              child: Center(child: Text('${books[index]["name"]}')),
+              child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue[100],
+                    child: Text(books[index]["abbrev"]),
+                  ),
+                  title: Text(books[index]["name"])),
             ),
           );
         },
