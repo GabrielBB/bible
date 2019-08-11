@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chapter_list.dart';
 
 class BookListPage extends StatelessWidget {
   BookListPage({Key key, this.title, this.books}) : super(key: key);
@@ -18,10 +19,19 @@ class BookListPage extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         itemCount: books.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 50,
-            color: Colors.grey[200],
-            child: Center(child: Text('${books[index]["name"]}')),
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ChapterListPage(book: books[index])),
+              );
+            },
+            child: Container(
+              height: 50,
+              color: Colors.grey[200],
+              child: Center(child: Text('${books[index]["name"]}')),
+            ),
           );
         },
         separatorBuilder: (BuildContext context, int index) =>

@@ -22,7 +22,6 @@ class _MyAppState extends State<MyApp> {
     loadBibleData().then((String d) => {
           setState(() {
             data = jsonDecode(d);
-            log('data: $data');
           })
         });
   }
