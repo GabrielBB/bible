@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'chapter_list.dart';
+import 'chapter_list_page.dart';
 
 class BookListPage extends StatelessWidget {
   BookListPage({Key key, this.title, this.books}) : super(key: key);
